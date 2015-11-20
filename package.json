@@ -24,6 +24,6 @@
   "dependencies": {
     "gulp-util": "^3.0.7",
     "through2": "^2.0.0",
-    "typescript-cs-poco": "^1.0.1"
+    "typescript-cs-poco": "^1.0.5"
   }
 }
