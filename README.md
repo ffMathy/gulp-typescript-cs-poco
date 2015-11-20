@@ -4,7 +4,7 @@
 
 Gulp-typescript-cs-poco is a Gulp plugin that translates basic C# POCO classes like this:
 
-```
+```C#
 public class MyPoco
 {
 	public string Name { get; set; }
@@ -17,7 +17,7 @@ public class MyPoco
 
 Into this Typescript file:
 
-```
+```typescript
 interface MyPoco {
 	Name: string;
 	Id: number;
@@ -29,7 +29,7 @@ interface MyPoco {
 
 ## Use
 
-```
+```javascript
 var pocoGen = require('gulp-typescript-cs-poco');
 
 gulp.task('poco', function () {
