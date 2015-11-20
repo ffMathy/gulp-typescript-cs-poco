@@ -1,3 +1,4 @@
+/* global Buffer */
 var pocoGen = require('typescript-cs-poco');
 var through = require('through2');
 var gutil = require('gulp-util');
@@ -13,7 +14,13 @@ module.exports = function() {
 		}
 
 		if (file.isBuffer()) {
-			file.contents = pocoGen(file.contents);
+			if (file.contents) {
+				var stringContents = file.contents.toString();
+				
+				var result = pocoGen(stringContents);
+				
+				file.contents = new Buffer(result);
+			}
 		}
 
 		this.push(file);
