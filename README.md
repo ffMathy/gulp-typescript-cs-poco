@@ -2,6 +2,8 @@
 
 ## Overview
 
+See https://github.com/Evertras/typescript-cs-poco for actual implementation.  This is just a wrapper.
+
 Gulp-typescript-cs-poco is a Gulp plugin that translates basic C# POCO classes like this:
 
 ```C#
