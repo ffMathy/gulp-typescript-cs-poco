@@ -20,6 +20,7 @@ module.exports = function() {
 				var result = pocoGen(stringContents);
 				
 				file.contents = new Buffer(result);
+				file.path = file.path.substring(0, file.path.length - 2) + 'ts';
 			}
 		}
 
