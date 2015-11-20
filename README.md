@@ -27,6 +27,14 @@ interface MyPoco {
 }
 ```
 
+## Installation
+
+Install with NPM:
+
+```shell
+npm install --save-dev gulp-typescript-cs-poco
+```
+
 ## Use
 
 ```javascript
