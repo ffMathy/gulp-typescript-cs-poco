@@ -1,6 +1,6 @@
 {
   "name": "gulp-typescript-cs-poco",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A gulp plugin to convert C# POCO classes into Typescript type definitions.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   "dependencies": {
     "gulp-util": "^3.0.7",
     "through2": "^2.0.0",
-    "typescript-cs-poco": "^1.0.5"
+    "typescript-cs-poco": "^1.0.6"
   }
 }
