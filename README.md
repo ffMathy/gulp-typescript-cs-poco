@@ -2,7 +2,7 @@
 
 ## Overview
 
-See https://github.com/Evertras/typescript-cs-poco for actual implementation.  This is just a wrapper.
+See https://github.com/Evertras/typescript-cs-poco for actual implementation.  This is just a ~~tribute~~ wrapper.
 
 Gulp-typescript-cs-poco is a Gulp plugin that translates basic C# POCO classes like this:
 
@@ -85,7 +85,7 @@ gulp.task('poco', function () {
 
 ### prefixWithI
 
-If set to true, all interfaces (but not enums) will be prefixed with I.  The conversion will now look like this:
+Deafults to false.  If set to true, all interfaces (but not enums) will be prefixed with I.  The conversion will now look like this:
 
 ```C#
 public class MyPoco
