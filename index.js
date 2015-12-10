@@ -6,7 +6,7 @@ var PluginError = gutil.PluginError;
 
 var PLUGIN_NAME = 'gulp-typescript-cs-poco';
 
-module.exports = function() {
+module.exports = function(options) {
 	var stream = through.obj(function(file, enc, cb) {
 		if (file.isStream()) {
 			this.emit('error', new PluginError(PLUGIN_NAME, "Streams not supported yet!"));
@@ -17,7 +17,7 @@ module.exports = function() {
 			if (file.contents) {
 				var stringContents = file.contents.toString();
 				
-				var result = pocoGen(stringContents);
+				var result = pocoGen(stringContents, options);
 				
 				file.contents = new Buffer(result);
 				file.path = file.path.substring(0, file.path.length - 2) + 'ts';
