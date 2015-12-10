@@ -85,7 +85,7 @@ gulp.task('poco', function () {
 
 ### prefixWithI
 
-Deafults to false.  If set to true, all interfaces (but not enums) will be prefixed with I.  The conversion will now look like this:
+Defaults to false.  If set to true, all interfaces (but not enums) will be prefixed with I.  The conversion will now look like this:
 
 ```C#
 public class MyPoco
