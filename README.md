@@ -50,3 +50,56 @@ gulp.task('poco', function () {
 ```
 
 This will create a single .ts file for every .cs file it finds.  You can combine this with tools like gulp-concat to turn this into one file if desired.
+
+## Options
+
+Options can be passed into the function to alter behavior.  Example below.
+
+```javascript
+var pocoGen = require('gulp-typescript-cs-poco');
+
+gulp.task('poco', function () {
+  return gulp.src('Models/*.cs')
+              .pipe(pocoGen({
+                prefixWithI: true
+			  }))
+              .pipe(gulp.dest('Scripts/myPocoTsFolder'));
+})
+```
+
+Or:
+
+```javascript
+var pocoGen = require('gulp-typescript-cs-poco');
+
+gulp.task('poco', function () {
+  var pocoGenOptions = {
+    prefixWithI: true
+  };
+
+  return gulp.src('Models/*.cs')
+              .pipe(pocoGen(pocoGenOptions))
+              .pipe(gulp.dest('Scripts/myPocoTsFolder'));
+})
+```
+
+### prefixWithI
+
+If set to true, all interfaces (but not enums) will be prefixed with I.  The conversion will now look like this:
+
+```C#
+public class MyPoco
+{
+	public string Name { get; set; }
+	public int Id { get; set; }
+}
+```
+
+To:
+
+```typescript
+interface IMyPoco {
+	Name: string;
+	Id: number;
+}
+```
