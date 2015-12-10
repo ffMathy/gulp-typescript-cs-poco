@@ -83,7 +83,7 @@ gulp.task('poco', function () {
 })
 ```
 
-### prefixWithI
+##### prefixWithI
 
 Defaults to false.  If set to true, all interfaces (but not enums) will be prefixed with I.  The conversion will now look like this:
 
