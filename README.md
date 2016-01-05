@@ -53,7 +53,7 @@ This will create a single .ts file for every .cs file it finds.  You can combine
 
 ## Options
 
-Options can be passed into the function to alter behavior.  Example below.
+Options can be passed into the function to alter behavior.  You can pass in only the options you need, or none at all for default behavior.
 
 ```javascript
 var pocoGen = require('gulp-typescript-cs-poco');
@@ -61,7 +61,8 @@ var pocoGen = require('gulp-typescript-cs-poco');
 gulp.task('poco', function () {
   return gulp.src('Models/*.cs')
               .pipe(pocoGen({
-                prefixWithI: true
+                prefixWithI: true,
+				baseNamespace: 'MyNamespace'
 			  }))
               .pipe(gulp.dest('Scripts/myPocoTsFolder'));
 })
@@ -74,7 +75,8 @@ var pocoGen = require('gulp-typescript-cs-poco');
 
 gulp.task('poco', function () {
   var pocoGenOptions = {
-    prefixWithI: true
+    prefixWithI: true,
+	baseNamespace: 'MyNamespace'
   };
 
   return gulp.src('Models/*.cs')
@@ -101,5 +103,26 @@ To:
 interface IMyPoco {
 	Name: string;
 	Id: number;
+}
+```
+
+##### baseNamespace
+
+If supplied, wraps all classes into a module with the same name.  Example:
+
+```C#
+public class MyPoco
+{
+	public string Name { get; set; }
+	public int Id { get; set; }
+}
+```
+
+```typescript
+module MyNamespace {
+	interface IMyPoco {
+		Name: string;
+		Id: number;
+	}
 }
 ```
