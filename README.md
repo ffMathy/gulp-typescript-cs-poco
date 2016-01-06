@@ -126,3 +126,5 @@ module MyNamespace {
 	}
 }
 ```
+
+Note that using this option with gulp concat() will create many individual module/interface declarations.  This is technically valid, but if you want a nice, clean version run concat() first on all your .cs files and then run this plugin with the baseNamespace option to wrap EVERYthing in a single module namespace.
