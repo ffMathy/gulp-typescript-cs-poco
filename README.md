@@ -120,7 +120,7 @@ public class MyPoco
 
 ```typescript
 module MyNamespace {
-	interface IMyPoco {
+	export interface IMyPoco {
 		Name: string;
 		Id: number;
 	}
