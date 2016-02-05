@@ -128,3 +128,24 @@ module MyNamespace {
 ```
 
 Note that using this option with gulp concat() will create many individual module/interface declarations.  This is technically valid, but if you want a nice, clean version run concat() first on all your .cs files and then run this plugin with the baseNamespace option to wrap EVERYthing in a single module namespace.
+
+##### dateTimeToDate
+
+Defaults to false.  Due to serialization/deserialization complications, the default implementation is to transform DateTime fields to strings, as that's what they naturally turn into in most .NET APIs.  If you want to treat the type as a Date, first make sure your API is handling the serialization properly!  Then provide the dateTimeToDate option set to true to turn this:
+
+```C#
+public class MyPoco
+{
+  public DateTime Timestamp { get; set; }
+  public double Value { get; set; }
+}
+```
+
+Intot his:
+
+```typescript
+interface IMyPoco {
+  Timestamp: Date;
+  Value: number;
+}
+```
