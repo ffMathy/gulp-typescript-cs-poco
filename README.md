@@ -62,7 +62,8 @@ gulp.task('poco', function () {
   return gulp.src('Models/*.cs')
               .pipe(pocoGen({
                 prefixWithI: true,
-				baseNamespace: 'MyNamespace'
+                baseNamespace: 'MyNamespace',
+                dateTimeToDate: true
 			  }))
               .pipe(gulp.dest('Scripts/myPocoTsFolder'));
 })
@@ -76,7 +77,8 @@ var pocoGen = require('gulp-typescript-cs-poco');
 gulp.task('poco', function () {
   var pocoGenOptions = {
     prefixWithI: true,
-	baseNamespace: 'MyNamespace'
+    baseNamespace: 'MyNamespace',
+    dateTimeToDate: true
   };
 
   return gulp.src('Models/*.cs')
