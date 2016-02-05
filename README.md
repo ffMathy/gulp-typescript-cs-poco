@@ -131,7 +131,7 @@ Note that using this option with gulp concat() will create many individual modul
 
 ##### dateTimeToDate
 
-Defaults to false.  Due to serialization/deserialization complications, the default implementation is to transform DateTime fields to strings, as that's what they naturally turn into in most .NET APIs.  If you want to treat the type as a Date, first make sure your API is handling the serialization properly!  Then provide the dateTimeToDate option set to true to turn this:
+Defaults to false.  Due to serialization/deserialization complications, the default implementation is to transform DateTime fields to strings, as that's what they naturally turn into in most .NET APIs.  If you want to treat the type as a Date, *first make sure your API is handling the serialization properly*!  Then provide the dateTimeToDate option set to true to turn this:
 
 ```C#
 public class MyPoco
@@ -141,7 +141,7 @@ public class MyPoco
 }
 ```
 
-Intot his:
+Into this:
 
 ```typescript
 interface IMyPoco {
