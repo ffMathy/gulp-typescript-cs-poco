@@ -22,7 +22,7 @@ module.exports = function(options) {
 				file.contents = new Buffer(result);
 
         var suffix = options.definitionFile === false ? 'ts' : 'd.ts';
-				file.path = file.path.substring(0, file.path.length - 2) + 'd.ts';
+				file.path = file.path.substring(0, file.path.length - 2) + suffix;
 			}
 		}
 
