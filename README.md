@@ -151,3 +151,7 @@ interface IMyPoco {
   Value: number;
 }
 ```
+
+##### definitionFile
+
+Defaults to true.  If explicitly set to false, the output file will not be of type d.ts and any baseNamespace being used will not have declare before the module name.
