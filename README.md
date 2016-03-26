@@ -63,7 +63,8 @@ gulp.task('poco', function () {
               .pipe(pocoGen({
                 prefixWithI: true,
                 baseNamespace: 'MyNamespace',
-                dateTimeToDate: true
+                dateTimeToDate: true,
+                propertyNameResolver: function(propName) { return propName[0].toLower() + propName.substring(1); }
 			  }))
               .pipe(gulp.dest('Scripts/myPocoTsFolder'));
 })
@@ -155,3 +156,7 @@ interface IMyPoco {
 ##### definitionFile
 
 Defaults to true.  If explicitly set to false, the output file will not be of type d.ts and any baseNamespace being used will not have declare before the module name.
+
+##### propertyNameResolver
+
+If supplied, this function will be called every time a property is resolved.  The function takes a single parameter of the name of the property and should return the transformed name as a string.  For example, the function might turn the property name into camelCase, or prepend it with a prefix of some sort to help match an API-side transformation.
