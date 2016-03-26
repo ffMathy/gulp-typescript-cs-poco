@@ -64,7 +64,7 @@ gulp.task('poco', function () {
                 prefixWithI: true,
                 baseNamespace: 'MyNamespace',
                 dateTimeToDate: true,
-                propertyNameResolver: function(propName) { return propName[0].toLower() + propName.substring(1); }
+                propertyNameResolver: function camelCaseResolver(propName) { return propName[0].toLower() + propName.substring(1); }
 			  }))
               .pipe(gulp.dest('Scripts/myPocoTsFolder'));
 })
@@ -79,7 +79,8 @@ gulp.task('poco', function () {
   var pocoGenOptions = {
     prefixWithI: true,
     baseNamespace: 'MyNamespace',
-    dateTimeToDate: true
+    dateTimeToDate: true,
+    propertyNameResolver: function camelCaseResolver(propName) { return propName[0].toLower() + propName.substring(1); }
   };
 
   return gulp.src('Models/*.cs')
