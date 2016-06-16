@@ -161,3 +161,7 @@ Defaults to true.  If explicitly set to false, the output file will not be of ty
 ##### propertyNameResolver
 
 If supplied, this function will be called every time a property is resolved.  The function takes a single parameter of the name of the property and should return the transformed name as a string.  For example, the function might turn the property name into camelCase, or prepend it with a prefix of some sort to help match an API-side transformation.
+
+##### ignoreVirtual
+
+If set to true, virtual properties will be ignored.  This is useful for things like EF-created POCOs that may have virtual reference fields that shouldn't be included.
