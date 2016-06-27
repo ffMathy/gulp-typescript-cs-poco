@@ -165,3 +165,7 @@ If supplied, this function will be called every time a property is resolved.  Th
 ##### ignoreVirtual
 
 If set to true, virtual properties will be ignored.  This is useful for things like EF-created POCOs that may have virtual reference fields that shouldn't be included.
+
+##### includeInterfaces
+
+If set to true, any interfaces found in the given files will also be included as Typescript interfaces.  By default interfaces are ignored.
