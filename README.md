@@ -169,3 +169,32 @@ If set to true, virtual properties will be ignored.  This is useful for things l
 ##### includeInterfaces
 
 If set to true, any interfaces found in the given files will also be included as Typescript interfaces.  By default interfaces are ignored.
+
+##### customTypeTranslations
+
+If set to an object, map every key in the object to the key's value.  For example:
+
+```typescript
+var options = {
+  customTypeTranslations: {
+    MyCustomStringClass: 'string'
+  }
+}
+```
+
+Will turn this:
+
+```C#
+public class MyPoco
+{
+  public MyCustomStringClass Name { get; set; }
+}
+```
+
+Into this:
+
+```typescript
+interface MyPoco {
+  Name: string;
+}
+```
